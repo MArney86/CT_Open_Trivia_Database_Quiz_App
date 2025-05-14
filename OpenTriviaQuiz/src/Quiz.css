@@ -1,0 +1,11 @@
+
+.answered-correct {
+    font-weight: bolder;
+    color: chartreuse;
+}
+
+.answered-incorrect {
+    font-weight: bolder;
+    color: crimson;
+}
+
