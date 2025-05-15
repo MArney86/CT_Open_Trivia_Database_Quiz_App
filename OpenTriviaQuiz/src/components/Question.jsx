@@ -19,7 +19,7 @@ export default function Question({ currentUser, setIsQuestion, results, setResul
                 const response = await fetch(`https://opentdb.com/api.php?amount=1&category=${currentUser.category}&difficulty=${currentUser.difficulty}&type=multiple&encode=url3986`);
     
                 if(!response.ok) {
-                    setError(`Failed to recieve question from Open Trivia DB:`);
+                    setError(`Failed to recieve question from Open Trivia DB: ${response.status} - ${response.statusText}`);
                 }
     
                 console.log(response);
@@ -44,7 +44,6 @@ export default function Question({ currentUser, setIsQuestion, results, setResul
                  
             } catch (e) {
                 setError(e.message)
-                console.log(e)
             } finally {
                 setIsLoading(false)
             }
@@ -98,10 +97,11 @@ export default function Question({ currentUser, setIsQuestion, results, setResul
         <div className="component-div">
             {isLoading ? <h1>Loading Question...</h1> : <form onSubmit={handleSubmit}>
                     <div className='question-div-1'>
-                        <h2>Question: {decodeURIComponent(question.question)}</h2>
+                        <h2>Question:</h2>
+                        <h3>{decodeURIComponent(question.question)}</h3>
                     </div>    
                     <div>    
-                        <label htmlFor="quiz">Please choose one of the following answers:</label>
+                        <label htmlFor="quiz">Please choose one of the following answers:</label><br/>
                         <select id="quiz" name="quiz" value={results.userAnswer} onChange={handleChange}>
                             <option value="">Please choose and answer!</option>
                             {answersRandomized.length > 0 ? ( answersRandomized.map(answer => (
@@ -109,7 +109,7 @@ export default function Question({ currentUser, setIsQuestion, results, setResul
                             ))) : (<option>Shuffling Answers...</option>)}
                         </select>
                     </div>
-                    <div className='button-div-2'>
+                    <div className='button-div'>
                         <button type="submit" disabled={!validateForm}>Submit your answer!</button>
                     </div>
                 </form>}
