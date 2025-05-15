@@ -41,8 +41,6 @@ export default function Question({ currentUser, setIsQuestion, results, setResul
                 const tempAnswers = [...returnedObject.incorrect_answers];
                 tempAnswers.splice(Math.floor(Math.random() * (tempAnswers.length + 1)), 0, returnedObject.correct_answer);
                 setAnswersRandomized(tempAnswers);
-
-                console.log(answersRandomized)
                  
             } catch (e) {
                 setError(e.message)
@@ -53,6 +51,7 @@ export default function Question({ currentUser, setIsQuestion, results, setResul
         }
 
         getQuestion();
+        console.log(answersRandomized)
 
     },[currentUser]);
 
@@ -96,9 +95,9 @@ export default function Question({ currentUser, setIsQuestion, results, setResul
     }
 
     return (
-        <div className="question-div">
+        <div className="component-div">
             {isLoading ? <h1>Loading Question...</h1> : <form onSubmit={handleSubmit}>
-                    <div>
+                    <div className='question-div-1'>
                         <h2>Question: {decodeURIComponent(question.question)}</h2>
                     </div>    
                     <div>    
@@ -110,7 +109,7 @@ export default function Question({ currentUser, setIsQuestion, results, setResul
                             ))) : (<option>Shuffling Answers...</option>)}
                         </select>
                     </div>
-                    <div>
+                    <div className='button-div-2'>
                         <button type="submit" disabled={!validateForm}>Submit your answer!</button>
                     </div>
                 </form>}

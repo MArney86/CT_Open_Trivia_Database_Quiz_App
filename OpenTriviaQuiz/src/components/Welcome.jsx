@@ -43,9 +43,9 @@ export default function Welcome({ currentUser, setCurrentUser, setIsVisible, set
     };
 
     return (
-        <div className="welcome-div">
+        <div className="component-div">
             <h1>Welcome to the Open Trivia Quiz App!</h1>
-            <p>To get started, please enter your name and select a category and difficulty level.</p>
+            <p>To get started, please enter your name,<br/> then select a category and difficulty level.</p>
             <form onSubmit={handleSubmit}>
                 <div>
                     <label htmlFor="userName">Name:</label>
@@ -73,7 +73,9 @@ export default function Welcome({ currentUser, setCurrentUser, setIsVisible, set
 
                 {error && <p className="error_message">{error}</p>}
 
-                <button type="submit" disabled={!validateForm}>Start Quiz</button>
+                <div className='button-div'>
+                    <button type="submit" disabled={!validateForm}>Start Quiz</button>
+                </div>
             </form>
         </div>  
     );

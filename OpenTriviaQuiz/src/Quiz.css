@@ -1,7 +1,7 @@
 
 .answered-correct {
     font-weight: bolder;
-    color: chartreuse;
+    color: green;
 }
 
 .answered-incorrect {
@@ -9,3 +9,96 @@
     color: crimson;
 }
 
+.component-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 5px solid rgb(44, 44, 201);
+    border-radius: 1.25rem;
+    margin: 3rem 2rem;
+    padding: 2rem;
+    width: 800px;
+    height: 800px;
+    background-color: beige;
+}
+
+.component-div .result-div-1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0 3rem 0;
+}
+
+.component-div .result-div-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: .25rem groove rgb(44, 44, 201);
+    border-radius: .5rem;
+    padding: 1rem;
+}
+
+.component-div h1 {
+    font-weight: bolder;
+    color:brown;
+    font-size: 2.5rem;
+}
+
+.component-div p {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5rem;
+}
+
+.component-div label {
+    font-family: Helvetica, sans-serif;
+    font-size: 1rem;
+}
+
+body {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    background-color: rgb(27, 27, 27);
+}
+
+#root {
+    width: auto;
+    height: auto;
+}
+
+.component-div form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    line-height: 2rem;
+}
+
+.component-div form button {
+    margin: 1rem;
+}
+
+.component-div form .button-div {
+    border: .25rem groove rgb(44, 44, 201);
+    border-radius: .5rem;
+}
+
+.component-div .question-div-1 {
+    text-align: center;
+}
+
+@media screen and (max-width: 799px) {
+
+    .results-div {
+        width: auto;
+        margin: 1rem;
+        padding: 1rem;
+    }
+    
+}
