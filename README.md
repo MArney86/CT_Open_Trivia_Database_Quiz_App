@@ -1,31 +1,127 @@
-# CT_Open_Trivia_Database_Quiz_App
+# Open Trivia Database Quiz App
 
-## Coding Temple Assignment - Open Trivia Database Quiz App
+## Overview
 
-This assignment is to help reinforce using React with calls to outside API to make a working app that also uses useState, useEffect and, props.
+A React-based quiz application that integrates with the [Open Trivia Database API](https://opentdb.com) to provide an interactive trivia experience. This project demonstrates modern React development practices including hooks (`useState`, `useEffect`), component composition, and external API integration.
 
-## How to use the App
+## Features
 
-Download and extract the repository, or clone the repository to your desired location.
+- **User Personalization**: Enter your name for a customized experience
+- **Category Selection**: Choose from multiple trivia categories including:
+  - General Knowledge
+  - Science: Computers
+  - Entertainment: Television
+  - Art
+- **Difficulty Levels**: Select from Easy, Medium, or Hard questions
+- **Real-time API Integration**: Questions fetched dynamically from Open Trivia Database
+- **Randomized Answers**: Answer choices are shuffled for each question
+- **Instant Feedback**: Immediate results showing correct answers and user performance
 
-Open your preferred terminal and navigate to where you extracted/cloned the repository then enter the ecom-product-app folder and run `npm install` to download all dependencies needed to run the app.
+## Installation & Setup
 
-At this point, you can use either the command `npm run dev` to run the app in developer mode. Or, you can build the app for deployment using the command `npm run build` and then using `npm run preview` to preview the build and ensure proper functioning.
+### Prerequisites
 
-## Basic operations of the App
+- Node.js (v14 or higher)
+- npm or yarn package manager
 
-### Welcome screen
+### Getting Started
 
-The app will load to a welcome screen asking the user to type in their name and choose a question category and difficulty setting then press a button to retrieve a question from the [Open Trivia Database](https://opentdb.com).
+1. **Clone the repository**
 
-Once the user has input their name and made their selections, pressing the button to submit their information will lead to the question screen.
+   ```bash
+   git clone https://github.com/yourusername/CT_Open_Trivia_Database_Quiz_App.git
+   cd CT_Open_Trivia_Database_Quiz_App
+   ```
 
-### Question screen
+2. **Navigate to the project directory**
 
-Upon initial switch over from the welcome screen, a loading message will be displayed while the question is requested from and sent from the [Open Trivia Database](https://opentdb.com).
+   ```bash
+   cd OpenTriviaQuiz
+   ```
 
-Once the question is recieved and the answer choices randomized, the screen will change to display the question and the answer choices will be displayed in a select box to choose the user's answer from. Submitting the user's answer then loads the results screen.
+3. **Install dependencies**
 
-### Results screen
+   ```bash
+   npm install
+   ```
 
-Now that the user's answer has been recorded a message telling the user the outcome of their choice and a button, to restart from the beginning to request a new question, will be displayed.
+4. **Run the application**
+   
+   **Development mode:**
+
+   ```bash
+   npm run dev
+   ```
+   
+   **Production build:**
+
+   ```bash
+   npm run build
+   npm run preview
+   ```
+
+## Usage Guide
+
+### 1. Welcome Screen
+
+- Enter your name in the provided input field
+- Select a trivia category from the dropdown menu
+- Choose your preferred difficulty level
+- Click "Start Quiz" to begin
+
+### 2. Question Screen
+
+- A loading indicator appears while fetching your question
+- Review the question and available answer choices
+- Select your answer from the dropdown menu
+- Click "Submit your answer!" to proceed
+
+### 3. Results Screen
+
+- View whether your answer was correct or incorrect
+- See the correct answer if you answered incorrectly
+- Click the restart button to play again with new selections
+
+## Technical Stack
+
+- **Frontend Framework**: React 18
+- **Styling**: CSS3
+- **API**: Open Trivia Database REST API
+- **Build Tool**: Vite
+- **State Management**: React Hooks (useState, useEffect)
+
+## Project Structure
+
+```
+OpenTriviaQuiz/
+├── src/
+│   ├── components/
+│   │   ├── Welcome.jsx
+│   │   ├── Question.jsx
+│   │   └── Results.jsx
+│   ├── Quiz.css
+│   └── App.jsx
+├── package.json
+└── README.md
+```
+
+## API Integration
+
+This application utilizes the [Open Trivia Database API](https://opentdb.com/api_config.php) to fetch trivia questions. The API provides:
+
+- Multiple choice questions
+- Various categories and difficulty levels
+- URL-encoded responses for proper character handling
+
+## Contributing
+
+This project was created as part of a Coding Temple assignment to reinforce React fundamentals. Feel free to fork and expand upon the functionality.
+
+## License
+
+This project is for educational purposes as part of the Coding Temple curriculum.
+
+## Acknowledgments
+
+- [Open Trivia Database](https://opentdb.com) for providing the trivia API
+- Coding Temple for the project requirements and guidance
